@@ -48,7 +48,7 @@ export class GeminiService {
 
         CRITICAL RULES:
         1. ${languageInstruction}
-        2. **Use emojis sparingly, naturally, and only when they genuinely enhance the emotional tone or flirtatious intent of a specific message.** Avoid overusing them; some messages might not need any. Focus on relevant and expressive emojis.        3. Don't be overly verbose or rambling - match the user's energy level.
+        3. Don't be overly verbose or rambling - match the user's energy level.
         4. Only elaborate or ask questions when it feels natural to the conversation.
         ${flirtInstruction}
         6. Describe your actions and non-verbal cues VERY CONCISELY, using ONLY SINGLE ASTERISKS, like *smiles alluringly*, *leans closer*, *blushes*. Keep these descriptions extremely brief, a single word or two. NEVER use parentheses () for actions.
