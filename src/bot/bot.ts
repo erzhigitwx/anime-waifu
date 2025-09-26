@@ -1,5 +1,5 @@
 // src/bot/bot.ts
-import { Telegraf, Context } from 'telegraf';
+import { Telegraf } from 'telegraf';
 import {Logger} from "@utils/Logger";
 import {CharacterHandler} from "@bot/handlers/CharacterHandler";
 import {ChatHandler} from "@bot/handlers/ChatHandler";
@@ -65,31 +65,31 @@ export class Bot {
     }
 
     private setupCommands() {
-        this.bot.start((ctx) => this.characterHandler.showWelcome(ctx));
-        this.bot.command('characters', (ctx) => this.characterHandler.showCharacters(ctx));
-        this.bot.command('premium', (ctx) => this.paymentHandler.showPremiumOptions(ctx));
-        this.bot.command('reset', (ctx) => this.chatHandler.resetConversation(ctx));
-        this.bot.command('settings', (ctx) => this.characterHandler.showSettings(ctx));
-        this.bot.command('help', (ctx) => this.characterHandler.showHelp(ctx));
-        this.bot.command('genimage', (ctx) => this.imageHandler.handleGenerateImageCommand(ctx));
+        this.bot.start((ctx: any) => this.characterHandler.showWelcome(ctx));
+        this.bot.command('characters', (ctx: any) => this.characterHandler.showCharacters(ctx));
+        this.bot.command('premium', (ctx: any) => this.paymentHandler.showPremiumOptions(ctx));
+        this.bot.command('reset', (ctx: any) => this.chatHandler.resetConversation(ctx));
+        this.bot.command('settings', (ctx: any) => this.characterHandler.showSettings(ctx));
+        this.bot.command('help', (ctx: any) => this.characterHandler.showHelp(ctx));
+        this.bot.command('genimage', (ctx: any) => this.imageHandler.handleGenerateImageCommand(ctx));
     }
 
     private setupCallbackHandlers() {
-        this.bot.action(/character_(.+)/, (ctx) => this.characterHandler.selectCharacter(ctx));
-        this.bot.action(/payment_(.+)/, (ctx) => this.paymentHandler.handlePaymentAction(ctx));
-        this.bot.action(/settings_(.+)/, (ctx) => this.characterHandler.handleSettingsAction(ctx));
-        this.bot.action(/admin_(.+)/, (ctx) => this.adminHandler.handleAdminAction(ctx));
+        this.bot.action(/character_(.+)/, (ctx: any) => this.characterHandler.selectCharacter(ctx));
+        this.bot.action(/payment_(.+)/, (ctx: any) => this.paymentHandler.handlePaymentAction(ctx));
+        this.bot.action(/settings_(.+)/, (ctx: any) => this.characterHandler.handleSettingsAction(ctx));
+        this.bot.action(/admin_(.+)/, (ctx: any) => this.adminHandler.handleAdminAction(ctx));
     }
 
     private setupMessageHandlers() {
-        this.bot.on('text', (ctx) => this.chatHandler.handleTextMessage(ctx));
-        this.bot.on('photo', (ctx) => this.imageHandler.handleUserPhoto(ctx));
-        this.bot.on('successful_payment', (ctx) => this.paymentHandler.handleSuccessfulPayment(ctx));
-        // this.bot.on('pre_checkout_query', (ctx) => this.paymentHandler.handlePreCheckout(ctx));
+        this.bot.on('text', (ctx: any) => this.chatHandler.handleTextMessage(ctx));
+        this.bot.on('photo', (ctx: any) => this.imageHandler.handleUserPhoto(ctx));
+        this.bot.on('successful_payment', (ctx: any) => this.paymentHandler.handleSuccessfulPayment(ctx));
+        // this.bot.on('pre_checkout_query', (ctx: any) => this.paymentHandler.handlePreCheckout(ctx));
     }
 
     private setupErrorHandling() {
-        this.bot.catch((err: any, ctx: Context) => {
+        this.bot.catch((err: any, ctx: any) => {
             this.logger.error('Bot error:', err);
             ctx.reply('❌ Something went wrong. Please try again or contact support.').catch(console.error);
         });
