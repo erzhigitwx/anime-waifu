@@ -1,0 +1,37 @@
+{
+  "name": "anime-gemini-bot",
+  "version": "1.0.0",
+  "description": "Anime character chatbot powered by Google Gemini",
+  "main": "dist/bot.js",
+  "scripts": {
+    "dev": "nodemon --exec tsx src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "test": "vitest"
+  },
+  "keywords": [
+    "telegram",
+    "bot",
+    "anime",
+    "gemini",
+    "ai"
+  ],
+  "dependencies": {
+    "@google/generative-ai": "^0.7.1",
+    "@types/mongoose": "^5.11.96",
+    "@types/uuid": "^10.0.0",
+    "axios": "^1.6.0",
+    "better-sqlite3": "^12.2.0",
+    "dotenv": "^16.3.1",
+    "mongoose": "^8.18.1",
+    "telegraf": "^4.15.6",
+    "tsx": "^4.20.5",
+    "uuid": "^13.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.0",
+    "nodemon": "^3.0.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  }
+}
