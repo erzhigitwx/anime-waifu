@@ -44,6 +44,7 @@ export class DatabaseService {
 
     private async runSeeds() {
         this.logger.info('Running database seeds...');
+        //@ts-ignore
         const { run: runCharacterSeeds } = await import('../../../database/seeds/001_initial_characters.ts');
         await runCharacterSeeds(this.logger); // Передаем logger, а не `this.db`
 

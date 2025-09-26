@@ -85,7 +85,7 @@ export class Bot {
         this.bot.on('text', (ctx) => this.chatHandler.handleTextMessage(ctx));
         this.bot.on('photo', (ctx) => this.imageHandler.handleUserPhoto(ctx));
         this.bot.on('successful_payment', (ctx) => this.paymentHandler.handleSuccessfulPayment(ctx));
-        this.bot.on('pre_checkout_query', (ctx) => this.paymentHandler.handlePreCheckout(ctx));
+        // this.bot.on('pre_checkout_query', (ctx) => this.paymentHandler.handlePreCheckout(ctx));
     }
 
     private setupErrorHandling() {

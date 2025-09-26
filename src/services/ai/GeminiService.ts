@@ -67,6 +67,7 @@ export class GeminiService {
                 maxOutputTokens: this.getResponseLength(character.settings.responseLength),
                 temperature: Math.max(0.7, character.settings.creativityLevel / 10),
             },
+            // @ts-ignore
             systemInstruction: { parts: [{ text: systemInstructionText }] }
         });
 

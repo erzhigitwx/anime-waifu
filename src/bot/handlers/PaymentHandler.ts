@@ -41,10 +41,10 @@ export class PaymentHandler {
         await ctx.reply('🎉 Payment successful! Your premium features are now active.').catch(this.logger.error);
     }
 
-    public async handlePreCheckout(ctx: Context) {
-        const query = ctx.preCheckoutQuery;
-        this.logger.info(`Pre-checkout query from user ${query.from.id}:`, query);
-        // TODO: Validate pre-checkout query (e.g., check if invoice is still valid)
-        await ctx.answerPreCheckoutQuery(true).catch(this.logger.error); // Always answer, true for success, false for failure
-    }
+    // public async handlePreCheckout(ctx: Context) {
+    //     const query = ctx.preCheckoutQuery;
+    //     this.logger.info(`Pre-checkout query from user ${query.from.id}:`, query);
+    //     // TODO: Validate pre-checkout query (e.g., check if invoice is still valid)
+    //     await ctx.answerPreCheckoutQuery(true).catch(this.logger.error); // Always answer, true for success, false for failure
+    // }
 }
